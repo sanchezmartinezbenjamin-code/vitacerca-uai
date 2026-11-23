@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#101e2b" />
+  <meta name="description" content="VitaCerca: demostración académica de pulsera y red de apoyo." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+  <title>VitaCerca | Demo Smartwatch + Red de Apoyo</title>
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="brand"><span class="brand-icon">✚</span><div><strong>VitaCerca</strong><small>Seguridad inteligente, sin complicaciones</small></div></div>
+      <span class="demo-tag">● DEMOSTRACIÓN</span>
+    </header>
+    <nav class="mode-nav" aria-label="Cambiar perspectiva">
+      <a id="link-family" href="?vista=familia" class="mode">♧ Red de apoyo</a>
+      <a id="link-watch" href="?vista=reloj" class="mode">◷ Smartwatch</a>
+    </nav>
+    <main>
+      <section id="view-family" class="view" hidden>
+        <div class="page-heading"><div><div class="kicker">PANEL FAMILIAR</div><h1>Cerca de quien más quieres.</h1><p>Ve cómo se recibiría y atendería una alerta de VitaCerca.</p></div><span class="role-icon">♡</span></div>
+        <div class="family-grid">
+          <div class="main-col">
+            <article class="card person-card"><div class="avatar">M</div><div class="person-detail"><h2>Marta Pérez</h2><p>76 años · Perfil de demostración</p></div><div id="person-badge" class="connection">Modo demo</div></article>
+            <article id="hero-state" class="hero card" aria-live="polite"></article>
+            <article class="card"><div class="section-title"><h2>Datos ilustrativos</h2><span>NO MEDIDOS</span></div><div class="vitals"><div><small>Pulso</small><b>76 <em>lpm</em></b></div><div><small>Oxigenación</small><b>97 <em>%</em></b></div><div><small>Movimiento</small><b>Normal</b></div></div><p class="fine-print">Estos valores son ficticios: todavía no existe conexión a sensores.</p></article>
+            <article class="card alert-card"><div class="section-title"><h2>Centro de alertas</h2><span>SIMULADO</span></div><div id="family-incident"></div></article>
+            <article class="card"><div class="section-title"><h2>Historial de eventos</h2><button class="tiny" data-action="clear">Borrar historial</button></div><div id="history-list"></div></article>
+          </div>
+          <aside class="side-col">
+            <article class="card device-card"><div class="mini-watch" aria-hidden="true"><div>✚</div><span>SOS</span><b>✓</b></div><h2>Dispositivo VitaCerca</h2><p>Pulsera sin pantalla, con SOS y confirmación de bienestar.</p><ul><li>Botón rojo: solicitar ayuda</li><li>Botón verde: estoy bien</li><li>Detección: simulada en esta versión</li></ul><a class="secondary block" href="?vista=reloj" target="_blank" rel="noopener">Abrir simulador del reloj ↗</a></article>
+            <article class="card"><h2>Prueba en vivo</h2><p>Abre el reloj en otra pestaña del <strong>mismo navegador</strong>. Sus acciones se reflejarán aquí.</p><div class="stack-buttons"><button data-action="fall" class="outline">Simular caída</button><button data-action="sos" class="outline red-outline">Simular SOS</button><button data-action="yellow" class="outline">Aviso preventivo</button><button data-action="reset" class="outline">Reiniciar demo</button></div></article>
+          </aside>
+        </div>
+      </section>
+      <section id="view-watch" class="view watch-view" hidden>
+        <div class="kicker">VISTA DEL ADULTO MAYOR · RELOJ</div><h1>VitaCerca en tu muñeca</h1><p class="watch-subtitle">Una interacción simple: pedir ayuda o confirmar bienestar.</p>
+        <div class="watch-housing"><div class="watch-dial">
+          <div class="watch-brand">✚ VitaCerca</div>
+          <div class="watch-status" id="watch-status" aria-live="polite">ESTOY BIEN</div>
+          <div class="watch-description" id="watch-description">Sin alertas activas</div>
+          <button class="watch-sos" data-action="sos" aria-label="Simular botón SOS"><span>✚</span> SOS</button>
+          <button class="watch-fine" data-action="fine" aria-label="Simular botón Estoy bien">✓ ESTOY BIEN</button>
+          <div class="watch-clock" id="watch-clock">DEMO · SIN SENSORES</div>
+        </div></div>
+        <div class="watch-actions"><button class="secondary" data-action="fall">↘ Simular caída</button><button class="secondary" data-action="reset">↻ Reiniciar</button></div>
+        <div id="watch-context" class="watch-context" aria-live="polite">El reloj no está conectado a un familiar real.</div>
+      </section>
+    </main>
+    <footer class="footer"><strong>Prototipo académico TEI301 · UAI</strong> — No detecta emergencias, no contacta personas reales y no reemplaza asistencia médica. La sincronización entre pestañas solo funciona en el mismo navegador/origen; no conecta dispositivos distintos.</footer>
+  </div>
+  <script src="app.js" defer></script>
+</body>
+</html>
